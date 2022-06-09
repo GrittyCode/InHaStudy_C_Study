@@ -24,9 +24,18 @@
     <ClCompile Include="StringBad.cpp">
       <Filter>소스 파일\constructorAnddestructor</Filter>
     </ClCompile>
+    <ClCompile Include="sayings1.cpp">
+      <Filter>소스 파일\constructorAnddestructor</Filter>
+    </ClCompile>
+    <ClCompile Include="String1.cpp">
+      <Filter>소스 파일\constructorAnddestructor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="StringBad.h">
+      <Filter>소스 파일\constructorAnddestructor</Filter>
+    </ClInclude>
+    <ClInclude Include="String1.h">
       <Filter>소스 파일\constructorAnddestructor</Filter>
     </ClInclude>
   </ItemGroup>
