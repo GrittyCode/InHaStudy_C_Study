@@ -41,6 +41,44 @@ String1::~String1()
     delete[] str;
 }
 
+void String1::stringlow()
+{
+    for (int i = 0; i < len; ++i)
+    {
+        if (str[i] <= 'Z' && str[i] >= 'A')
+        {
+            str[i] += 32;
+        }
+    }
+}
+
+void String1::stringup()
+{
+    for (int i = 0; i < len; ++i)
+    {
+        if (str[i] <= 'z' && str[i] >= 'a')
+        {
+            str[i] -= 32;
+        }
+    }
+}
+
+int String1::has(char c)
+{
+    int cnt = 0;
+    for (int i = 0; i < len; ++i)
+    {
+        if (str[i] == c) cnt++;
+    }
+
+    return cnt;
+}
+
+const char* String1::getStr()
+{
+    return str;
+}
+
 String1& String1::operator=(const String1& st)
 {
     if (this == &st)
@@ -52,6 +90,11 @@ String1& String1::operator=(const String1& st)
     return *this;
 }
 
+void String1::setlen(int length)
+{
+    len = length;
+}
+
 String1& String1::operator=(const char* s)
 {
     delete[] str;
@@ -59,6 +102,43 @@ String1& String1::operator=(const char* s)
     str = new char[len + 1];
     std::strcpy(str, s);
     return *this;
+}
+
+void String1::setStr(const char* c)
+{
+    delete[] str;
+    str = new char[len + 1];
+    std::strcpy(str, c);
+}
+
+
+
+String1 String1::operator+(const String1& st1)
+{
+    String1 tmp;
+    tmp.len = (len+st1.len);
+    
+    delete[] tmp.str;
+    tmp.str = nullptr;
+
+    tmp.str = new char[tmp.len + 1];
+    std::strcpy(tmp.str, str);
+    std::strcat(tmp.str,st1.str);
+    return tmp;
+}
+
+String1 String1::operator+(const char* st1)
+{
+    String1 tmp;
+    tmp.len = (len + std::strlen(st1));
+
+    delete[] tmp.str;
+    tmp.str = nullptr;
+
+    tmp.str = new char[tmp.len + 1];
+    std::strcpy(tmp.str, str);
+    std::strcat(tmp.str, st1);
+    return String1(tmp.str);
 }
 
 char& String1::operator[](int i)
@@ -91,6 +171,7 @@ bool operator==(const String1& st1, const String1& st2)
     return (std::strcmp(st1.str, st2.str) == 0);
 }
 
+
 ostream& operator<<(ostream& os, const String1& st)
 {
     os << st.str;
@@ -106,4 +187,13 @@ istream& operator>>(istream& is, String1& st)
     while (is && is.get() != '\n')
         continue;
     return is;
+}
+
+const char* operator+(const char* c,String1 &st)
+{
+    st.setlen(st.length() + std::strlen(c));
+    char temp[128];
+    std::strcpy(temp, c);
+    std::strcat(temp, st.getStr());
+    return temp;
 }

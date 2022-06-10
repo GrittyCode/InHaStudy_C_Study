@@ -68,6 +68,21 @@ int main()
 	callme1(sayings[0]);
 	cout << "참조 callme 이후의 객체 개수 : " << name.HowMany() << "\n";
 
+	String1 a = "abc";
+	String1 d = "dEf";
+
+	String1 f;
+	cout << a << " + " << d << " = ";
+	f = (a + d);
+	cout << f << "\n";
+	cout << "문자열 소문자화 : ";
+	f.stringlow();
+	cout << f << "\n";
+	cout << "문자열 대문자화 : ";
+	f.stringup();
+	cout << f << "\n";
+
+
 }
 
 void callme(String1 str)

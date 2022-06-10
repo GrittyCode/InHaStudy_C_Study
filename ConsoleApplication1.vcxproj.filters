@@ -30,6 +30,18 @@
     <ClCompile Include="String1.cpp">
       <Filter>소스 파일\constructorAnddestructor</Filter>
     </ClCompile>
+    <ClCompile Include="stackcalc.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="pe12-02.cpp">
+      <Filter>소스 파일\constructorAnddestructor</Filter>
+    </ClCompile>
+    <ClCompile Include="tabtenn1.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="usett1.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="StringBad.h">
@@ -37,6 +49,9 @@
     </ClInclude>
     <ClInclude Include="String1.h">
       <Filter>소스 파일\constructorAnddestructor</Filter>
+    </ClInclude>
+    <ClInclude Include="tabtenn1.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

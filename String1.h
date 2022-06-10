@@ -10,7 +10,7 @@ private:
 	char* str; //문자열 지시 포인터
 	int len; //문자열 길이
 	static int num_strings; //객체의 수
-	static const int CINLIM = 80; //cin 입력 합ㄴ계
+	static const int CINLIM = 80; //cin 입력 합계
 public:
 	String1(const char* s);
 	String1();
@@ -18,8 +18,16 @@ public:
 	~String1(); //소멸자
 	int length() const { return len; }
 	//오버로딩 연산자 메서드
+	void stringlow();
+	void stringup();
+	void setlen(int length);
+	void setStr(const char* c);
+	const char* getStr();
+	int has(char c);
 	String1& operator=(const String1& st);
 	String1& operator=(const char* s);
+	String1 operator+(const String1& st1);
+	String1 operator+(const char* s);
 	char& operator[](int i);
 	const char& operator[](int i) const;
 	//static 함수
@@ -28,6 +36,7 @@ public:
 	friend bool operator<(const String1& st1, const String1& st2);
 	friend bool operator>(const String1& st1, const String1& st2);
 	friend bool operator==(const String1& st1, const String1& st2);
+	friend const char* operator+(const char* c, String1& st);
 	friend ostream& operator<<(ostream &os, const String1& st);
 	friend istream& operator>>(istream &is, String1& st);
 };
